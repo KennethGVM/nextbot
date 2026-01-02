@@ -67,6 +67,7 @@ export default function NotFound() {
             </Link>
             <Link
               href="https://github.com/KennethGVM/nextbot"
+              target="_blank"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-linear-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-slate-950 font-bold rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30 group"
             >
               <Github className="w-5 h-5" />
