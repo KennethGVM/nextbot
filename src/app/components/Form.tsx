@@ -10,7 +10,9 @@ const Form = () => {
   const getData = async () => {
     const search = encodeURIComponent(`${category}. Pregunta: ${question}`);
 
-    const res = await fetch(`http://localhost:3000/api?search=${search}`);
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_NEXT}/api?search=${search}`
+    );
 
     return res.json();
   };
@@ -23,12 +25,18 @@ const Form = () => {
       setResult("");
       setLoading(true);
       e.preventDefault();
-      getData().then((r) => {
-        setLoading(false);
-        setResult(r.data);
-        setCategory("");
-        setQuestion("");
-      });
+      getData()
+        .then((r) => {
+          setResult(r.data);
+          setCategory("");
+          setQuestion("");
+        })
+        .catch((e) => {
+          alert(`No se pudo hacer la peticion: ${e}`);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     }
   };
 
@@ -90,7 +98,7 @@ const Form = () => {
           <p>{result}</p>
         </div>
       )}
-      <section >
+      <section className="mt-8 p-4 border-x-2 border-gray-600">
         <h2>Acerca de nosotros</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
