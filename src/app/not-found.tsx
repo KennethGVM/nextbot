@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, Code2, Home } from "lucide-react";
+import { ArrowLeft, Code2, Github, Home } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -65,6 +65,13 @@ export default function NotFound() {
               <Home className="w-5 h-5" />
               Ir al inicio
             </Link>
+            <Link
+              href="https://github.com/KennethGVM/nextbot"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-linear-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-slate-950 font-bold rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30 group"
+            >
+              <Github className="w-5 h-5" />
+              Repositorio
+            </Link>
           </div>
 
           {/* Floating elements for decoration */}
@@ -76,7 +83,7 @@ export default function NotFound() {
               href="/"
               className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium transition-colors"
             >
-              <span>Ir a WebDevBot</span>
+              <span>Ir a WebNextBot</span>
               <ArrowLeft className="w-4 h-4 rotate-180" />
             </Link>
           </div>
